@@ -237,7 +237,7 @@ img {
         display: flex;
         align-items: center;
     }
-    .caption__button a button {
+    .caption__button a div {
         margin-left: 8px;
     }
     .header .repair-icon,
@@ -474,26 +474,26 @@ li {
     margin-top: 24px;
 }
 
-.navigation__list {
+.navigation__item {
     margin-left: 24px;
 }
 
-.navigation__list:not(:last-child) {
+.navigation__item:not(:last-child) {
     margin-bottom: 24px;
 }
 
-.navigation__item {
+.navigation__link {
     text-decoration: none;
     font-weight: 700;
     line-height: 32px;
     color: rgba(27, 28, 33, 1);
 }
 
-.navigation__item--active {
+.navigation__link--active {
     color: rgba(126, 126, 130, 1);
 }
 
-.navigation__item--active::before {
+.navigation__link--active::before {
     content: '';
     position: absolute;
     left: 0;
@@ -565,7 +565,6 @@ li {
 button,
 button:active,
 button:focus {
-    outline: none;
     border: 0;
     background-color: transparent;
 }
@@ -584,6 +583,41 @@ a {
 a {
     text-decoration: none;
     color: #1B1C21;
+}
+
+.menu__link,
+.navigation__link,
+.contacts__link,
+.caption__link {
+    position: relative;
+}
+
+.menu__link::after,
+.navigation__link::after,
+.contacts__link::after,
+.caption__link::after {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(0, 0, 0, 0.1);
+    content: "";
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: translateY(10px);
+}
+
+.menu__link:hover::after,
+.navigation__link:hover::after,
+.contacts__link:hover::after,
+.caption__link:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navigation__link--active {
+    position: static;
 }
 
 button:hover,
