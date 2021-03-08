@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>Brand Fragment</title>
+</head>
+
+<body>
+    <div class="brand">
+        <div class="brand__header">
+            <h2 class="brand__header-text">Ремонт техники различных брендов</h2>
+        </div>
+        <div class="swiper-container brand__container">
+            <div class="swiper-wrapper brand__wrapper--cut brand__wrapper">
+                <div class="swiper-slide brand__slide">
+                    <a href="#" class="brand__slide-content">
+                        <img class="brand__slide-logo" src="./assets/img/content/lenovo.png" alt="lenovo brand logo">
+                    </a>
+                </div>
+                <div class="swiper-slide brand__slide">
+                    <a href="#" class="brand__slide-content">
+                        <img class="brand__slide-logo" src="./assets/img/content/samsung.png" alt="samsung brand logo">
+                    </a>
+                </div>
+                <div class="swiper-slide brand__slide">
+                    <a href="#" class="brand__slide-content">
+                        <img class="brand__slide-logo" src="./assets/img/content/apple.png" alt="apple brand logo">
+                    </a>
+                </div>
+                <div class="swiper-slide brand__slide">
+                    <a href="#" class="brand__slide-content">
+                        <img class="brand__slide-logo" src="./assets/img/content/viewsonic.png" alt="viewsonic brand logo">
+                    </a>
+                </div>
+                <div class="swiper-slide brand__slide">
+                    <a href="#" class="brand__slide-content">
+                        <img class="brand__slide-logo" src="./assets/img/content/bosch.png" alt="bosch brand logo">
+                    </a>
+                </div>
+                <div class="swiper-slide brand__slide">
+                    <a href="#" class="brand__slide-content">
+                        <img class="brand__slide-logo" src="./assets/img/content/HP.png" alt="HP brand logo">
+                    </a>
+                </div>
+                <div class="swiper-slide brand__slide">
+                    <a href="#" class="brand__slide-content">
+                        <img class="brand__slide-logo" src="./assets/img/content/acer.png" alt="acer brand logo">
+                    </a>
+                </div>
+                <div class="swiper-slide brand__slide">
+                    <a href="#" class="brand__slide-content">
+                        <img class="brand__slide-logo" src="./assets/img/content/sony.png" alt="sony brand logo">
+                    </a>
+                </div>
+                <div class="swiper-slide brand__slide">
+                    <a href="#" class="brand__slide-content">
+                        <img class="brand__slide-logo" src="./assets/img/content/lenovo.png" alt="lenovo brand logo">
+                    </a>
+                </div>
+                <div class="swiper-slide brand__slide">
+                    <a href="#" class="brand__slide-content">
+                        <img class="brand__slide-logo" src="./assets/img/content/samsung.png" alt="samsung brand logo">
+                    </a>
+                </div>
+                <div class="swiper-slide brand__slide">
+                    <a href="#" class="brand__slide-content">
+                        <img class="brand__slide-logo" src="./assets/img/content/apple.png" alt="apple brand logo">
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <button type="button" class="brand__button brand__button--show button">Показать все</button>
+
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                slidesPerView: 'auto',
+                spaceBetween: 16,
+                init: false,
+                breakpoints: {
+                    768: {
+                        spaceBetween: 24,
+                        allowTouchMove: false,
+                        preventClicks: false,
+                        simulateTouch: false
+                    },
+                    1120: {
+                        spaceBetween: 32,
+                        allowTouchMove: false,
+                        preventClicks: false,
+                        simulateTouch: false
+                    }
+                }
+            });
+
+            swiper.on('beforeResize', function() {
+                if (swiper.isBeginning === false && document.documentElement.clientWidth >= 768) {
+                    swiper.slideTo(0);
+                }
+            });
+
+            swiper.init();
+        </script>
+        <script src="./assets/js/main.js"></script>
+    </div>
+</body>
+
+</html>
